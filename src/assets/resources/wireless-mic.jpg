@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#09090b"/>
+        <stop offset="50%" stop-color="#18181b"/>
+        <stop offset="100%" stop-color="#1c1917"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#grid)"/>
+    
+    <g transform="translate(0, 0)">
+      <rect x="260" y="160" width="120" height="140" rx="16" fill="#27272a" stroke="#f97316" stroke-width="4"/>
+           <rect x="420" y="160" width="120" height="140" rx="16" fill="#27272a" stroke="#f97316" stroke-width="4"/>
+           <circle cx="320" cy="200" r="14" fill="#fb923c"/>
+           <circle cx="480" cy="200" r="14" fill="#fb923c"/>
+           <rect x="290" y="240" width="60" height="30" rx="6" fill="#f97316" opacity="0.4"/>
+           <rect x="450" y="240" width="60" height="30" rx="6" fill="#f97316" opacity="0.4"/>
+    </g>
+    
+    <rect x="0" y="350" width="800" height="100" fill="rgba(15, 23, 42, 0.75)"/>
+    <text x="40" y="390" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Rode Wireless GO II</text>
+    <text x="40" y="420" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="16" fill="#f97316">AUDIO • Dual Channel</text>
+    <rect x="700" y="380" width="60" height="30" rx="15" fill="#f97316" opacity="0.9"/>
+    <circle cx="730" cy="395" r="6" fill="#ffffff"/>
+  </svg>

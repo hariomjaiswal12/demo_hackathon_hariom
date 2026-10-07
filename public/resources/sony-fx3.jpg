@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#09090b"/>
+        <stop offset="50%" stop-color="#18181b"/>
+        <stop offset="100%" stop-color="#0f172a"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#grid)"/>
+    
+    <g transform="translate(0, 0)">
+      <rect x="240" y="160" width="220" height="140" rx="18" fill="#18181b" stroke="#64748b" stroke-width="4"/>
+           <circle cx="350" cy="230" r="45" fill="#09090b" stroke="#ef4444" stroke-width="5"/>
+           <circle cx="350" cy="230" r="25" fill="#1e293b"/>
+           <rect x="440" y="140" width="120" height="180" rx="12" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+           <circle cx="280" cy="185" r="8" fill="#ef4444"/>
+    </g>
+    
+    <rect x="0" y="350" width="800" height="100" fill="rgba(15, 23, 42, 0.75)"/>
+    <text x="40" y="390" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Sony FX3 Cinema Camera</text>
+    <text x="40" y="420" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="16" fill="#ef4444">HARDWARE • 4K Cinema</text>
+    <rect x="700" y="380" width="60" height="30" rx="15" fill="#ef4444" opacity="0.9"/>
+    <circle cx="730" cy="395" r="6" fill="#ffffff"/>
+  </svg>

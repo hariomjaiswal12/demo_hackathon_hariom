@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#18181b"/>
+        <stop offset="50%" stop-color="#27272a"/>
+        <stop offset="100%" stop-color="#581c87"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#grid)"/>
+    
+    <g transform="translate(0, 0)">
+      <circle cx="400" cy="200" r="45" fill="none" stroke="#a855f7" stroke-width="6"/>
+           <rect x="385" y="170" width="30" height="60" rx="15" fill="#c084fc"/>
+           <path d="M360 210 a 40 40 0 0 0 80 0" fill="none" stroke="#a855f7" stroke-width="5" stroke-linecap="round"/>
+           <line x1="400" y1="250" x2="400" y2="290" stroke="#a855f7" stroke-width="6"/>
+           <line x1="360" y1="290" x2="440" y2="290" stroke="#a855f7" stroke-width="6" stroke-linecap="round"/>
+           <path d="M220 220 Q 280 180 340 220 T 400 220 T 460 220 T 520 220 T 580 220" fill="none" stroke="#e9d5ff" stroke-width="3" opacity="0.5"/>
+    </g>
+    
+    <rect x="0" y="350" width="800" height="100" fill="rgba(15, 23, 42, 0.75)"/>
+    <text x="40" y="390" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Podcast Studio</text>
+    <text x="40" y="420" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="16" fill="#a855f7">AUDIO • Studio Booth</text>
+    <rect x="700" y="380" width="60" height="30" rx="15" fill="#a855f7" opacity="0.9"/>
+    <circle cx="730" cy="395" r="6" fill="#ffffff"/>
+  </svg>

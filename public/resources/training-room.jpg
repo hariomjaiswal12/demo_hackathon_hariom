@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1e1b4b"/>
+        <stop offset="50%" stop-color="#312e81"/>
+        <stop offset="100%" stop-color="#4338ca"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#grid)"/>
+    
+    <g transform="translate(0, 0)">
+      <rect x="260" y="130" width="280" height="120" rx="12" fill="#1e1b4b" stroke="#818cf8" stroke-width="4"/>
+           <rect x="200" y="270" width="400" height="15" rx="7" fill="#818cf8" opacity="0.7"/>
+           <circle cx="250" cy="310" r="12" fill="#a5b4fc"/>
+           <circle cx="350" cy="310" r="12" fill="#a5b4fc"/>
+           <circle cx="450" cy="310" r="12" fill="#a5b4fc"/>
+           <circle cx="550" cy="310" r="12" fill="#a5b4fc"/>
+    </g>
+    
+    <rect x="0" y="350" width="800" height="100" fill="rgba(15, 23, 42, 0.75)"/>
+    <text x="40" y="390" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Training Room</text>
+    <text x="40" y="420" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="16" fill="#818cf8">SPACE • 20 Capacity</text>
+    <rect x="700" y="380" width="60" height="30" rx="15" fill="#818cf8" opacity="0.9"/>
+    <circle cx="730" cy="395" r="6" fill="#ffffff"/>
+  </svg>
