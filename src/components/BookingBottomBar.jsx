@@ -7,19 +7,19 @@ export function BookingBottomBar({ selectedSlot, onContinue }) {
   const durationText = selectedSlot ? selectedSlot.duration : "";
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-xl py-3 px-4 sm:px-6">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-800 shadow-xl py-3 px-4 sm:px-6 transition-colors duration-200">
       <div className="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto flex items-center justify-between gap-3">
         {/* Left Information */}
         <div>
-          <span className="text-[10px] sm:text-xs font-bold tracking-wider text-slate-400 uppercase block">
+          <span className="text-[10px] sm:text-xs font-bold tracking-wider text-slate-400 dark:text-slate-500 uppercase block">
             ACTIVE ALLOCATION
           </span>
           <div className="flex items-center gap-1.5 mt-0.5">
-            <span className="text-xs sm:text-sm font-bold text-slate-900">
+            <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
               {timeText}
             </span>
             {durationText && (
-              <span className="text-xs font-semibold text-slate-500">
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                 ({durationText})
               </span>
             )}
@@ -33,7 +33,7 @@ export function BookingBottomBar({ selectedSlot, onContinue }) {
           className={`px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all ${
             isEnabled
               ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-600/25 active:scale-[0.98] cursor-pointer'
-              : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+              : 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
           }`}
         >
           <span>Continue to Booking</span>

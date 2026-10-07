@@ -227,9 +227,9 @@ export function TimelinePage({ onBookingSuccess, onNavigateToBookings, onNavTabC
         {/* Loading State */}
         {isLoading && (
           <div className="w-full px-4 sm:px-6 my-6">
-            <div className="bg-white rounded-3xl p-8 text-center border border-slate-100 shadow-sm">
-              <Loader2 className="w-8 h-8 animate-spin text-indigo-600 mx-auto mb-2" />
-              <p className="text-xs font-semibold text-slate-500">Loading live availability from MongoDB...</p>
+            <div className="bg-white dark:bg-[#111827] rounded-3xl p-8 text-center border border-slate-100 dark:border-slate-800 shadow-sm">
+              <Loader2 className="w-8 h-8 animate-spin text-indigo-600 dark:text-indigo-400 mx-auto mb-2" />
+              <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">Loading live availability from MongoDB...</p>
             </div>
           </div>
         )}
@@ -237,8 +237,8 @@ export function TimelinePage({ onBookingSuccess, onNavigateToBookings, onNavTabC
         {/* Error State */}
         {error && !isLoading && (
           <div className="w-full px-4 sm:px-6 my-6">
-            <div className="bg-rose-50 rounded-3xl p-6 text-center border border-rose-200 text-rose-700 shadow-sm">
-              <AlertCircle className="w-8 h-8 text-rose-600 mx-auto mb-2" />
+            <div className="bg-rose-50 dark:bg-rose-950/40 rounded-3xl p-6 text-center border border-rose-200 dark:border-rose-900/60 text-rose-700 dark:text-rose-300 shadow-sm">
+              <AlertCircle className="w-8 h-8 text-rose-600 dark:text-rose-400 mx-auto mb-2" />
               <p className="text-sm font-bold">{error}</p>
               <button
                 onClick={loadTimelineData}
@@ -253,9 +253,9 @@ export function TimelinePage({ onBookingSuccess, onNavigateToBookings, onNavTabC
         {/* Main Multi-Resource Timeline Card */}
         {!isLoading && !error && (
           <div className="w-full px-4 sm:px-6 mb-6">
-            <div className="bg-white rounded-3xl p-4 sm:p-5 shadow-sm border border-slate-100 relative">
+            <div className="bg-white dark:bg-[#111827] rounded-3xl p-4 sm:p-5 shadow-sm border border-slate-100 dark:border-slate-800 relative">
               {/* Time Header Labels */}
-              <div className="flex justify-between pl-32 sm:pl-40 pr-2 text-xs font-semibold text-slate-400 mb-2">
+              <div className="flex justify-between pl-32 sm:pl-40 pr-2 text-xs font-semibold text-slate-400 dark:text-slate-500 mb-2">
                 <span>09:00</span>
                 <span>12:00</span>
                 <span>15:00</span>

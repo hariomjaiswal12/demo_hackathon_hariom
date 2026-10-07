@@ -20,18 +20,18 @@ export function TimelineDateSelector({ selectedDate, onSelectDate }) {
               onClick={() => onSelectDate(item.id)}
               className={`flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-2xl transition-all duration-200 ${
                 isSelected
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
-                  : 'bg-slate-100/90 hover:bg-slate-200/70 text-slate-700'
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/25 border border-indigo-500'
+                  : 'bg-slate-100/90 dark:bg-slate-800/80 hover:bg-slate-200/70 dark:hover:bg-slate-700/80 text-slate-700 dark:text-slate-200 border border-transparent dark:border-slate-700/50'
               }`}
             >
-              <span className={`text-xs font-semibold ${isSelected ? 'text-indigo-100' : 'text-slate-500'}`}>
+              <span className={`text-xs font-semibold ${isSelected ? 'text-indigo-100' : 'text-slate-500 dark:text-slate-400'}`}>
                 {item.day}
               </span>
               <span className="text-base sm:text-lg font-bold leading-tight mt-0.5">
                 {item.date}
               </span>
               {isSelected && (
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1 shadow-xs shadow-emerald-400"></span>
               )}
             </button>
           );

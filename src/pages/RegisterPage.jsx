@@ -46,28 +46,34 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0B1120] text-slate-900 dark:text-slate-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#070C18] text-slate-900 dark:text-slate-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden transition-colors duration-200">
+      {/* Dynamic Ambient Background Elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
+
       {/* Top Right Theme Toggle */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-4 z-20">
         <ThemeToggle />
       </div>
 
-      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center px-4">
-        <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white mx-auto shadow-lg shadow-indigo-500/25 mb-4">
-          <DeskDropIcon size={22} />
+      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center px-4 relative z-10">
+        {/* Glowing Brand Icon */}
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-violet-700 flex items-center justify-center text-white mx-auto shadow-xl shadow-indigo-500/30 ring-4 ring-indigo-500/20 mb-4 transition-transform hover:scale-105">
+          <DeskDropIcon size={26} />
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-          Create DeskDrop Account
+        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Create <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 dark:from-indigo-400 dark:via-purple-300 dark:to-indigo-300 bg-clip-text text-transparent">DeskDrop</span> Account
         </h2>
-        <p className="mt-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
           Internal Office Resource & Asset Booking System
         </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0">
-        <div className="bg-white dark:bg-[#111827] py-8 px-6 sm:px-10 shadow-sm dark:shadow-2xs border border-slate-200/80 dark:border-slate-800 rounded-3xl">
+      <div className="mt-7 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0 relative z-10">
+        <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl py-8 px-6 sm:px-10 shadow-xl dark:shadow-2xl border border-slate-200/80 dark:border-slate-800/80 rounded-3xl">
           {error && (
-            <div className="mb-5 p-3.5 rounded-2xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs font-semibold flex items-center gap-2.5">
+            <div className="mb-5 p-3.5 rounded-2xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs font-semibold flex items-center gap-2.5 animate-fadeIn">
               <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
               <span>{error}</span>
             </div>
@@ -88,7 +94,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Sarah Jenkins"
-                  className="input-base pl-10 text-xs sm:text-sm"
+                  className="input-base pl-10 text-xs sm:text-sm focus:ring-2 focus:ring-indigo-500/40"
                 />
               </div>
             </div>
@@ -107,7 +113,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
-                  className="input-base pl-10 text-xs sm:text-sm"
+                  className="input-base pl-10 text-xs sm:text-sm focus:ring-2 focus:ring-indigo-500/40"
                 />
               </div>
             </div>
@@ -126,7 +132,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="At least 6 characters"
-                  className="input-base pl-10 pr-10 text-xs sm:text-sm"
+                  className="input-base pl-10 pr-10 text-xs sm:text-sm focus:ring-2 focus:ring-indigo-500/40"
                 />
                 <button
                   type="button"
@@ -141,7 +147,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 py-3 px-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-indigo-500/20 transition-all flex items-center justify-center gap-2"
+              className="w-full mt-2 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 active:scale-[0.99] text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               {isLoading ? (
                 <>
@@ -151,7 +157,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
               ) : (
                 <>
                   <span>Create Account</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                 </>
               )}
             </button>
@@ -164,7 +170,7 @@ export function RegisterPage({ onRegisterSuccess, onSwitchToLogin }) {
               <button
                 type="button"
                 onClick={onSwitchToLogin}
-                className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 hover:underline"
               >
                 Sign In
               </button>

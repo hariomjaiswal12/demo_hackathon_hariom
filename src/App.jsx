@@ -466,7 +466,7 @@ function MainApp() {
         />
 
         {/* Booking Tabs */}
-        <div className="bg-white border-b border-slate-200 px-5 pt-4 pb-0">
+        <div className="bg-white dark:bg-[#0F172A] border-b border-slate-200 dark:border-slate-800 px-5 pt-4 pb-0 transition-colors duration-200">
           <BookingTabs
             activeTab={activeBookingTab}
             onTabChange={setActiveBookingTab}
@@ -486,9 +486,9 @@ function MainApp() {
         {/* Error State */}
         {bookingsError && !isLoadingBookings && (
           <div className="p-5">
-            <div className="bg-red-50 rounded-xl p-5 text-center border border-red-200">
-              <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-2" />
-              <p className="text-[14px] font-semibold text-red-700 mb-3">{bookingsError}</p>
+            <div className="bg-red-50 dark:bg-red-950/40 rounded-xl p-5 text-center border border-red-200 dark:border-red-900/60">
+              <AlertCircle className="w-8 h-8 text-red-500 dark:text-red-400 mx-auto mb-2" />
+              <p className="text-[14px] font-semibold text-red-700 dark:text-red-300 mb-3">{bookingsError}</p>
               <button
                 onClick={loadBookingsFromAPI}
                 className="btn btn-secondary btn-sm"
@@ -507,10 +507,10 @@ function MainApp() {
               <>
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h2 className="text-[15px] font-semibold text-slate-900">Upcoming</h2>
-                    <p className="text-[12px] text-slate-400">{todayLabel}</p>
+                    <h2 className="text-[15px] font-semibold text-slate-900 dark:text-white">Upcoming</h2>
+                    <p className="text-[12px] text-slate-500 dark:text-slate-400">{todayLabel}</p>
                   </div>
-                  <span className="text-[12px] text-slate-400">{todayReservations.length} reservation{todayReservations.length !== 1 ? 's' : ''}</span>
+                  <span className="text-[12px] text-slate-500 dark:text-slate-400">{todayReservations.length} reservation{todayReservations.length !== 1 ? 's' : ''}</span>
                 </div>
                 {todayReservations.length > 0 ? (
                   todayReservations.map((booking) => (
@@ -537,8 +537,8 @@ function MainApp() {
             {activeBookingTab === 'active' && (
               <>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-[15px] font-semibold text-slate-900">Active Sessions</h2>
-                  <span className="text-[12px] text-slate-400">{filteredBookings.length} active</span>
+                  <h2 className="text-[15px] font-semibold text-slate-900 dark:text-white">Active Sessions</h2>
+                  <span className="text-[12px] text-slate-500 dark:text-slate-400">{filteredBookings.length} active</span>
                 </div>
                 {filteredBookings.length > 0 ? (
                   filteredBookings.map((booking) => (
@@ -563,8 +563,8 @@ function MainApp() {
             {activeBookingTab === 'completed' && (
               <>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-[15px] font-semibold text-slate-900">Completed</h2>
-                  <span className="text-[12px] text-slate-400">{filteredBookings.length} total</span>
+                  <h2 className="text-[15px] font-semibold text-slate-900 dark:text-white">Completed</h2>
+                  <span className="text-[12px] text-slate-500 dark:text-slate-400">{filteredBookings.length} total</span>
                 </div>
                 {filteredBookings.length > 0 ? (
                   filteredBookings.map((booking) => (
@@ -584,7 +584,7 @@ function MainApp() {
             {activeBookingTab === 'cancelled' && (
               <>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-[15px] font-semibold text-slate-900">Cancelled</h2>
+                  <h2 className="text-[15px] font-semibold text-slate-900 dark:text-white">Cancelled</h2>
                 </div>
                 {filteredBookings.length > 0 ? (
                   filteredBookings.map((booking) => (

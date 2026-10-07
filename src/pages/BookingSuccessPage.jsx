@@ -1,16 +1,16 @@
-import React from 'react';
+﻿import React from 'react';
 import { AppShell } from '../components/AppShell';
 import { ArrowLeft, CheckCircle2, Calendar, Clock, MapPin, FileText, Hash, Key } from 'lucide-react';
 
 function DetailRow({ icon: Icon, label, value }) {
   return (
-    <div className="flex items-start gap-3 py-3 border-b border-slate-100 last:border-0">
-      <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 mt-0.5">
-        <Icon className="w-4 h-4 text-slate-500" strokeWidth={1.8} />
+    <div className="flex items-start gap-3 py-3 border-b border-slate-100 dark:border-slate-800 last:border-0">
+      <div className="w-8 h-8 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center shrink-0 mt-0.5">
+        <Icon className="w-4 h-4 text-slate-500 dark:text-slate-400" strokeWidth={1.8} />
       </div>
       <div className="min-w-0">
-        <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-0.5">{label}</p>
-        <p className="text-[14px] font-medium text-slate-800 break-words">{value}</p>
+        <p className="text-[11px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-0.5">{label}</p>
+        <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200 break-words">{value}</p>
       </div>
     </div>
   );
@@ -56,41 +56,41 @@ export function BookingSuccessPage({
     >
       <div className="w-full">
         {/* Header */}
-        <div className="bg-white border-b border-slate-200 px-5 pt-4 pb-4 flex items-center gap-3">
+        <div className="bg-white dark:bg-[#0F172A] border-b border-slate-200 dark:border-slate-800 px-5 pt-4 pb-4 flex items-center gap-3 transition-colors duration-200">
           <button
             onClick={onNavigateToBookings}
             aria-label="Back to bookings"
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+            className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" strokeWidth={2} />
           </button>
           <div>
-            <h1 className="text-[16px] font-bold text-slate-900">Booking Confirmed</h1>
-            <p className="text-[12px] text-slate-400">Reservation successfully created</p>
+            <h1 className="text-[16px] font-bold text-slate-900 dark:text-white">Booking Confirmed</h1>
+            <p className="text-[12px] text-slate-400 dark:text-slate-500">Reservation successfully created</p>
           </div>
         </div>
 
         <div className="p-5 space-y-4">
           {/* Success Banner */}
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 flex items-center gap-4">
+          <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-2xl p-5 flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/30">
               <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={2.5} />
             </div>
             <div>
-              <h2 className="font-bold text-[17px] text-emerald-900">Booking Confirmed!</h2>
-              <p className="text-[13px] text-emerald-700 mt-0.5">
+              <h2 className="font-bold text-[17px] text-emerald-900 dark:text-emerald-300">Booking Confirmed!</h2>
+              <p className="text-[13px] text-emerald-700 dark:text-emerald-400 mt-0.5">
                 Your resource has been successfully reserved.
               </p>
             </div>
           </div>
 
           {/* Booking Summary */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-            <div className="px-5 pt-4 pb-3 border-b border-slate-100">
+          <div className="bg-white dark:bg-[#111827] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div className="px-5 pt-4 pb-3 border-b border-slate-100 dark:border-slate-800">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-semibold text-[15px] text-slate-900">{formatted.resourceName}</h3>
-                  <span className="text-[11px] font-medium text-slate-500">{formatted.category}</span>
+                  <h3 className="font-semibold text-[15px] text-slate-900 dark:text-white">{formatted.resourceName}</h3>
+                  <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">{formatted.category}</span>
                 </div>
                 <span className="badge badge-confirmed">{formatted.status}</span>
               </div>
@@ -108,17 +108,17 @@ export function BookingSuccessPage({
           </div>
 
           {/* Passcode */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5">
+          <div className="bg-white dark:bg-[#111827] rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Key className="w-4 h-4 text-indigo-600" strokeWidth={2} />
-              <h3 className="text-[14px] font-semibold text-slate-900">Access Passcode</h3>
+              <Key className="w-4 h-4 text-indigo-600 dark:text-indigo-400" strokeWidth={2} />
+              <h3 className="text-[14px] font-semibold text-slate-900 dark:text-white">Access Passcode</h3>
             </div>
-            <div className="bg-slate-900 rounded-xl px-5 py-4 flex items-center justify-center">
+            <div className="bg-slate-900 dark:bg-slate-950 rounded-xl px-5 py-4 flex items-center justify-center border border-slate-700 dark:border-slate-800">
               <span className="text-2xl font-mono font-bold text-white tracking-[0.2em] select-all">
                 {formatted.passcode}
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 text-center mt-2">
+            <p className="text-[11px] text-slate-400 dark:text-slate-500 text-center mt-2">
               Present this code at the resource location to check in
             </p>
           </div>

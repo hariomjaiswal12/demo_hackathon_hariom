@@ -9,7 +9,7 @@ export function ResourceHeader({ title = "New Reservation", onBack, avatarUrl = 
         <button
           onClick={onBack}
           aria-label="Back to bookings"
-          className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:bg-slate-200/60 transition-colors"
+          className="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors"
         >
           <ArrowLeft className="w-5 h-5 stroke-[2.2]" />
         </button>
@@ -21,11 +21,11 @@ export function ResourceHeader({ title = "New Reservation", onBack, avatarUrl = 
           </svg>
         </div>
 
-        <h1 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">{title}</h1>
+        <h1 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">{title}</h1>
       </div>
 
       {/* Right Group: User Avatar */}
-      <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white shadow-xs border border-slate-200 cursor-pointer">
+      <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white dark:ring-slate-800 shadow-xs border border-slate-200 dark:border-slate-700 cursor-pointer">
         <img
           src={avatarUrl}
           alt="User Profile"

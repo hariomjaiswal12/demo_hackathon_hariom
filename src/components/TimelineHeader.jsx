@@ -16,8 +16,8 @@ export function TimelineHeader({ onFilterClick, avatarUrl = "https://images.unsp
             </svg>
           </div>
           <div>
-            <h2 className="text-base font-bold text-slate-900 leading-tight tracking-tight">DeskDrop</h2>
-            <p className="text-xs font-medium text-slate-500 leading-none">Resources</p>
+            <h2 className="text-base font-bold text-slate-900 dark:text-white leading-tight tracking-tight">DeskDrop</h2>
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 leading-none">Resources</p>
           </div>
         </div>
 
@@ -25,21 +25,21 @@ export function TimelineHeader({ onFilterClick, avatarUrl = "https://images.unsp
         <div className="flex items-center gap-3">
           <button
             aria-label="Search"
-            className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 hover:bg-slate-200/60 transition-colors"
+            className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors"
           >
             <Search className="w-5 h-5 stroke-[2]" />
           </button>
           
           <button
             aria-label="Notifications"
-            className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 hover:bg-slate-200/60 transition-colors relative"
+            className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors relative"
           >
             <Bell className="w-5 h-5 stroke-[2]" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-indigo-600 ring-2 ring-white"></span>
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-indigo-600 ring-2 ring-white dark:ring-slate-900"></span>
           </button>
 
           {/* User Avatar */}
-          <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white shadow-xs border border-slate-200 cursor-pointer">
+          <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white dark:ring-slate-800 shadow-xs border border-slate-200 dark:border-slate-700 cursor-pointer">
             <img 
               src={avatarUrl} 
               alt="User profile" 
@@ -52,21 +52,21 @@ export function TimelineHeader({ onFilterClick, avatarUrl = "https://images.unsp
       {/* Page Title + Day/Week Segmented Control + Filter Button */}
       <div className="flex items-center justify-between gap-2 mb-3">
         <div className="flex items-center gap-2">
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Timeline</h1>
-          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-600 uppercase tracking-wide">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Timeline</h1>
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60 uppercase tracking-wide">
             LIVE
           </span>
         </div>
 
         <div className="flex items-center gap-2">
           {/* Day / Week Switch */}
-          <div className="bg-slate-200/70 p-1 rounded-2xl flex items-center gap-1">
+          <div className="bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-2xl flex items-center gap-1 border border-slate-200/50 dark:border-slate-700/50">
             <button
               onClick={() => setViewMode('day')}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 viewMode === 'day'
                   ? 'bg-indigo-600 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
               }`}
             >
               Day
@@ -79,7 +79,7 @@ export function TimelineHeader({ onFilterClick, avatarUrl = "https://images.unsp
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 viewMode === 'week'
                   ? 'bg-indigo-600 text-white shadow-xs'
-                  : 'text-slate-500 hover:text-slate-800'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
               Week
@@ -90,7 +90,7 @@ export function TimelineHeader({ onFilterClick, avatarUrl = "https://images.unsp
           <button 
             onClick={onFilterClick}
             aria-label="Filter timeline"
-            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-colors border border-slate-200/60"
+            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200/70 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors border border-slate-200/60 dark:border-slate-700"
           >
             <SlidersHorizontal className="w-4 h-4 stroke-[2.2]" />
           </button>

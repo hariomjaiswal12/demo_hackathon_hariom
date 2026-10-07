@@ -1,23 +1,23 @@
-import React from 'react';
+﻿import React from 'react';
 import { TimelineBlock } from './TimelineBlock';
 
 export function TimelineRow({ resource, selectedSlot, onSelectSlot, onUnavailableClick }) {
   const { id, name, location, blocks } = resource;
 
   return (
-    <div className="flex items-center gap-3 py-3 border-b border-slate-100 last:border-0">
+    <div className="flex items-center gap-3 py-3 border-b border-slate-100 dark:border-slate-800/60 last:border-0">
       {/* Resource Column (Left) */}
       <div className="w-28 sm:w-36 shrink-0">
-        <h4 className="font-bold text-slate-900 text-xs sm:text-sm leading-tight truncate">
+        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs sm:text-sm leading-tight truncate">
           {name}
         </h4>
-        <p className="text-[11px] font-medium text-slate-500 mt-0.5 truncate">
+        <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mt-0.5 truncate">
           {location}
         </p>
       </div>
 
       {/* Timeline Track Area (Right) */}
-      <div className="flex-1 h-11 rounded-xl overflow-hidden bg-slate-100 flex relative border border-slate-200/50 shadow-inner">
+      <div className="flex-1 h-11 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800/50 flex relative border border-slate-200/50 dark:border-slate-700/40 shadow-inner">
         {blocks.map((block, idx) => {
           const isSelected =
             selectedSlot &&

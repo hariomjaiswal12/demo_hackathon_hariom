@@ -89,11 +89,11 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
     >
       <div className="w-full">
         {/* ===== PAGE HEADER ===== */}
-        <div className="bg-white border-b border-slate-200 px-5 md:px-6 pt-6 pb-5">
+        <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-5 md:px-6 pt-6 pb-5">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-[22px] font-bold text-slate-900 tracking-tight">Resource Registry</h1>
-              <p className="text-[13px] text-slate-500 mt-0.5">Manage office resources and availability.</p>
+              <h1 className="text-[22px] font-bold text-slate-900 dark:text-slate-100 tracking-tight">Resource Registry</h1>
+              <p className="text-[13px] text-slate-500 dark:text-slate-400 mt-0.5">Manage office resources and availability.</p>
             </div>
             <button
               onClick={() => setIsAddModalOpen(true)}
@@ -107,13 +107,13 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 mt-5">
             {[
-              { label: 'Total Assets', value: resourcesList.length, color: 'text-slate-900' },
-              { label: 'Available', value: resourcesList.filter((r) => r.status === 'AVAILABLE').length, color: 'text-emerald-600' },
-              { label: 'Maintenance', value: resourcesList.filter((r) => r.status === 'MAINTENANCE').length, color: 'text-amber-600' },
+              { label: 'Total Assets', value: resourcesList.length, color: 'text-slate-900 dark:text-slate-100' },
+              { label: 'Available', value: resourcesList.filter((r) => r.status === 'AVAILABLE').length, color: 'text-emerald-600 dark:text-emerald-400' },
+              { label: 'Maintenance', value: resourcesList.filter((r) => r.status === 'MAINTENANCE').length, color: 'text-amber-600 dark:text-amber-400' },
             ].map((stat) => (
-              <div key={stat.label} className="bg-slate-50 rounded-xl p-3 border border-slate-200">
+              <div key={stat.label} className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 border border-slate-200 dark:border-slate-700/60">
                 <p className={`text-xl font-bold ${stat.color}`}>{stat.value}</p>
-                <p className="text-[11px] text-slate-500 font-medium mt-0.5">{stat.label}</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -141,8 +141,8 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3.5 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap transition-all ${
                   selectedCategory === cat.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-white text-slate-500 border border-slate-200 hover:border-slate-300 hover:text-slate-700'
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200'
                 }`}
               >
                 {cat.label}
@@ -161,9 +161,9 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
 
           {/* Error */}
           {error && !isLoading && (
-            <div className="bg-red-50 border border-red-200 rounded-xl p-5 text-center">
-              <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-2" />
-              <p className="text-[14px] font-semibold text-red-700">{error}</p>
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/40 rounded-xl p-5 text-center">
+              <AlertCircle className="w-8 h-8 text-red-500 dark:text-red-400 mx-auto mb-2" />
+              <p className="text-[14px] font-semibold text-red-700 dark:text-red-300">{error}</p>
               <button
                 onClick={loadResources}
                 className="btn btn-secondary btn-sm mt-3 flex items-center gap-1.5 mx-auto"
@@ -176,12 +176,12 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
 
           {/* Empty */}
           {!isLoading && !error && filteredResources.length === 0 && (
-            <div className="bg-white border border-slate-200 rounded-xl py-12 px-6 text-center">
-              <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl py-12 px-6 text-center">
+              <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto mb-4">
                 <Inbox className="w-6 h-6 text-slate-400" strokeWidth={1.5} />
               </div>
-              <h3 className="font-semibold text-[15px] text-slate-700">No resources found</h3>
-              <p className="text-[13px] text-slate-400 mt-1 max-w-xs mx-auto">
+              <h3 className="font-semibold text-[15px] text-slate-800 dark:text-slate-200">No resources found</h3>
+              <p className="text-[13px] text-slate-500 dark:text-slate-400 mt-1 max-w-xs mx-auto">
                 {searchQuery ? 'Try a different search.' : 'Add your first resource to get started.'}
               </p>
               <button
@@ -196,29 +196,29 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
 
           {/* Resources List */}
           {!isLoading && !error && filteredResources.length > 0 && (
-            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div className="bg-white dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-xs">
               {filteredResources.map((res, idx) => {
                 const resId = res._id || res.id;
                 const isLast = idx === filteredResources.length - 1;
                 return (
                   <div
                     key={resId}
-                    className={`flex items-center gap-3 p-4 ${!isLast ? 'border-b border-slate-100' : ''} hover:bg-slate-50 transition-colors group`}
+                    className={`flex items-center gap-3 p-4 ${!isLast ? 'border-b border-slate-100 dark:border-slate-800/60' : ''} hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group`}
                   >
                     {/* Icon */}
-                    <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                      <HardDrive className="w-4 h-4 text-indigo-600" strokeWidth={1.8} />
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 flex items-center justify-center shrink-0">
+                      <HardDrive className="w-4 h-4 text-indigo-600 dark:text-indigo-400" strokeWidth={1.8} />
                     </div>
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h3 className="font-semibold text-[14px] text-slate-900 truncate">{res.name}</h3>
-                        <span className="text-[10px] font-mono font-semibold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded-md shrink-0">
+                        <h3 className="font-semibold text-[14px] text-slate-900 dark:text-slate-100 truncate">{res.name}</h3>
+                        <span className="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded-md shrink-0">
                           {res.resourceCode}
                         </span>
                       </div>
-                      <p className="text-[12px] text-slate-400 truncate mt-0.5">
+                      <p className="text-[12px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
                         {res.location} • {res.category}
                       </p>
                     </div>
@@ -226,12 +226,12 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
                     {/* Status + Actions */}
                     <div className="flex items-center gap-2 shrink-0">
                       <ResourceStatusBadge status={res.status} />
-                      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="flex items-center gap-1 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                         <button
                           onClick={() => setEditingResource(res)}
                           title="Edit"
                           aria-label={`Edit ${res.name}`}
-                          className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-indigo-50 text-slate-500 hover:text-indigo-600 flex items-center justify-center transition-colors"
+                          className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/40 text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center justify-center transition-colors"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
                         </button>
@@ -240,7 +240,7 @@ export function ResourceRegistryPage({ onNavigateToBookings, onNavTabChange, cur
                           disabled={deletingId === resId}
                           title="Delete"
                           aria-label={`Delete ${res.name}`}
-                          className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-500 hover:text-red-500 flex items-center justify-center transition-colors disabled:opacity-50"
+                          className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-red-50 dark:hover:bg-red-900/40 text-slate-500 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-400 flex items-center justify-center transition-colors disabled:opacity-50"
                         >
                           {deletingId === resId
                             ? <Loader2 className="w-3.5 h-3.5 animate-spin text-red-500" />
